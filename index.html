@@ -14593,14 +14593,14 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h3 id="Table-of-Contents:">Table of Contents:<a class="anchor-link" href="#Table-of-Contents:">&#182;</a></h3><pre><code>1. [Introduction](agustin-mor.github.io/)
-2. [Data Collection/Curation + Parsing](/#2.-Data-Collection/Curation-+-Parsing)
-3. [Data Management/Representation](./#3.-Data-Management/Representation)
-4. [Exploratory Data Analysis]( https://agustin-mor.github.io/#4.-Exploratory-Data-Analysis )
-5. [Hypothesis Testing](https://agustin-mor.github.io/#5.-Hypothesis-Testing)
-6. [Communication of Insights Attained](https://agustin-mor.github.io/#6.-Communication-of-Insights-Attained)
-
-</code></pre>
+<h3 id="Table-of-Contents:">Table of Contents:<a class="anchor-link" href="#Table-of-Contents:">&#182;</a></h3><ol>
+<li><a href="https://agustin-mor.github.io/">Introduction</a></li>
+<li><a href="https://agustin-mor.github.io/#2.-Data-Collection/Curation-+-Parsing">Data Collection/Curation + Parsing</a></li>
+<li><a href="https://agustin-mor.github.io/#3.-Data-Management/Representation">Data Management/Representation</a></li>
+<li><a href="https://agustin-mor.github.io/#4.-Exploratory-Data-Analysis%5D">Exploratory Data Analysis</a></li>
+<li><a href="https://agustin-mor.github.io/#5.-Hypothesis-Testing">Hypothesis Testing</a></li>
+<li><a href="https://agustin-mor.github.io/#6.-Communication-of-Insights-Attained">Communication of Insights Attained</a></li>
+</ol>
 
 </div>
 </div>
@@ -14653,30 +14653,22 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h2 id="2.-Data-Collection/Curation-+-Parsing">2. Data Collection/Curation + Parsing<a class="anchor-link" href="#2.-Data-Collection/Curation-+-Parsing">&#182;</a></h2><pre><code>Before we do any type of data science we must do two things:
-    1) Get data
-    2) Parse data
-
-Data comes in the form of datasets which can be created or found *(I'll list some resources at the bottom for finding datasets). In this case we will be using following two datasets:
-
-    Table D-1. Historical Median Income Using Alternative Price Indices: 1967 to 2021
-    https://www2.census.gov/programs-surveys/demo/tables/p60/276/tableD1.xlsx
-
-
-    Table 330.10. Average undergraduate tuition, fees, room, and board rates charged for full-time students in degree-granting postsecondary institutions, by level and control of institution: Selected years, 1963-64 through 2020-21
-    https://nces.ed.gov/programs/digest/d21/tables/xls/tabn330.10.xls
-
-If you open up these files you'll notice that they aren't just datasets. They both have headers and footnotes which we don't want. To adjust for this we parse the data. Parsing is the act of fitting files into our use case. In order to parse our excel files into dataframes we will be using the pandas 'read_excel()' function to extract the data and ignore the header and footnotes.
-
-&lt;-- Resources --&gt;
-Free resources for finding Datasets:
-https://www.kaggle.com/
-https://datasetsearch.research.google.com/
-https://en.wikipedia.org/wiki/List_of_open_government_data_sites
-
-You can also often find datasets directly on the sites of organizations.
-
-</code></pre>
+<h2 id="2.-Data-Collection/Curation-+-Parsing">2. Data Collection/Curation + Parsing<a class="anchor-link" href="#2.-Data-Collection/Curation-+-Parsing">&#182;</a></h2><p>Before we do any type of data science we must do two things:</p>
+<ol>
+<li>Get data</li>
+<li>Parse data</li>
+</ol>
+<p>Data comes in the form of datasets which can be created or found *(I'll list some resources at the bottom for finding datasets). In this case we will be using following two datasets:</p>
+<p><a href="https://www2.census.gov/programs-surveys/demo/tables/p60/276/tableD1.xlsx">Table D-1. Historical Median Income Using Alternative Price Indices: 1967 to 2021</a></p>
+<p><a href="https://nces.ed.gov/programs/digest/d21/tables/xls/tabn330.10.xls">Table 330.10. Average undergraduate tuition, fees, room, and board rates charged for full-time students in degree-granting postsecondary institutions, by level and control of institution: Selected years, 1963-64 through 2020-21</a></p>
+<p>If you open up these files you'll notice that they aren't just datasets. They both have headers and footnotes which we don't want. To adjust for this we parse the data. Parsing is the act of fitting files into our use case. In order to parse our excel files into dataframes we will be using the pandas 'read_excel()' function to extract the data and ignore the header and footnotes.</p>
+<p>Free resources for finding Datasets:</p>
+<ul>
+<li>https://www.kaggle.com/</li>
+<li>https://datasetsearch.research.google.com/</li>
+<li>https://en.wikipedia.org/wiki/List_of_open_government_data_sites</li>
+</ul>
+<p>You can also often find datasets directly on the sites of organizations.</p>
 
 </div>
 </div>
@@ -15001,25 +14993,23 @@ You can also often find datasets directly on the sites of organizations.
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h2 id="3.-Data-Management/Representation">3. Data Management/Representation<a class="anchor-link" href="#3.-Data-Management/Representation">&#182;</a></h2><pre><code>It's important to note that parsing data doesn't always work perfectly and this case is an example of that. If you look at the source excel files you'll notice a handful of issues in our dataframes:
-    - Almost all values have turned into a float approximation of our integers
-    - We've lost the column group names
-    - Some of the years in 'df_median_income' have extra characters
-
-In addition to these errors we also have some formatting issues:
-    - 'df_median_income's year column is in descending order, unlike 'df_college_cost'
-    - 'df_median_income' has some repeating years (We'll show this later)
-    - 'df_college_cost's year column is an interval
-    - 'df_college_cost' has labels in rows
-    - Both dataframes have bad column names
-
-Before we do any kind of exploratory analysis we must address these issues, and the best way to start is by getting rid of the columns we don't need.
-
-
-For our 'df_median_income' we will only be using the first three columns: Year, Current Dollars- Estimate, and Current Dollars- Margin of error.
-
-For our 'df_college_cost' we will only use the 1st, 14th, 17th, 20th, and 23rd columns which represent the current dollars estimate cost for all institutions (2 and 4 year) in regards to total cost, only tuition and fees, only dormitory rooms, and only board.
-</code></pre>
+<h2 id="3.-Data-Management/Representation">3. Data Management/Representation<a class="anchor-link" href="#3.-Data-Management/Representation">&#182;</a></h2><p>It's important to note that parsing data doesn't always work perfectly and this case is an example of that. If you look at the source excel files you'll notice a handful of issues in our dataframes:</p>
+<ul>
+<li>Almost all values have turned into a float approximation of our integers</li>
+<li>We've lost the column group names</li>
+<li>Some of the years in 'df_median_income' have extra characters</li>
+</ul>
+<p>In addition to these errors we also have some formatting issues:</p>
+<ul>
+<li>'df_median_income's year column is in descending order, unlike 'df_college_cost'</li>
+<li>'df_median_income' has some repeating years (We'll show this later)</li>
+<li>'df_college_cost's year column is an interval</li>
+<li>'df_college_cost' has labels in rows</li>
+<li>Both dataframes have bad column names</li>
+</ul>
+<p>Before we do any kind of exploratory analysis we must address these issues, and the best way to start is by getting rid of the columns we don't need.</p>
+<p>For our 'df_median_income' we will only be using the first three columns: Year, Current Dollars- Estimate, and Current Dollars- Margin of error.</p>
+<p>For our 'df_college_cost' we will only use the 1st, 14th, 17th, 20th, and 23rd columns which represent the current dollars estimate cost for all institutions (2 and 4 year) in regards to total cost, only tuition and fees, only dormitory rooms, and only board.</p>
 
 </div>
 </div>
@@ -15251,10 +15241,8 @@ For our 'df_college_cost' we will only use the 1st, 14th, 17th, 20th, and 23rd c
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<pre><code>Now that we've further isolated our dataframes we can start fixing the errors and formatting issues.
-
-Let's start by fixing the values for 'df_median_income'. 
-</code></pre>
+<p>Now that we've further isolated our dataframes we can start fixing the errors and formatting issues.</p>
+<p>Let's start by fixing the values for 'df_median_income'.</p>
 
 </div>
 </div>
@@ -15372,8 +15360,7 @@ Let's start by fixing the values for 'df_median_income'.
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<pre><code>Next we can get rid of the duplicate years.
-</code></pre>
+<p>Next we can get rid of the duplicate years.</p>
 
 </div>
 </div>
@@ -15542,8 +15529,7 @@ Let's start by fixing the values for 'df_median_income'.
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<pre><code>Lastly let's reset the index as our changes have mixed it up
-</code></pre>
+<p>Lastly let's reset the index as our changes have mixed it up</p>
 
 </div>
 </div>
@@ -15653,10 +15639,8 @@ Let's start by fixing the values for 'df_median_income'.
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<pre><code>Now that we've fixed all the issues with 'df_median_income' we can start fixing the issues with 'df_college_cost'.
-
-the 'df_college_cost' dataframe is actually a three dataset put together (All Institutions, Public Institutions, and Private Institutions). We'll start by finding and deleting the labels for these datasets, this will allow us to fix the issues with the data, then we can split each dataset into it's own dataframe.
-</code></pre>
+<p>Now that we've fixed all the issues with 'df_median_income' we can start fixing the issues with 'df_college_cost'.</p>
+<p>the 'df_college_cost' dataframe is actually a three dataset put together (All Institutions, Public Institutions, and Private Institutions). We'll start by finding and deleting the labels for these datasets, this will allow us to fix the issues with the data, then we can split each dataset into it's own dataframe.</p>
 
 </div>
 </div>
@@ -15945,8 +15929,7 @@ the 'df_college_cost' dataframe is actually a three dataset put together (All In
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<pre><code>Now that we've fixed all the issues with 'df_college_cost' we can split each dataset into it's own dataframe and reset their indexes.
-</code></pre>
+<p>Now that we've fixed all the issues with 'df_college_cost' we can split each dataset into it's own dataframe and reset their indexes.</p>
 
 </div>
 </div>
@@ -15982,8 +15965,7 @@ the 'df_college_cost' dataframe is actually a three dataset put together (All In
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<pre><code>The last thing we want to do merge all of our new dataframes with the 'df_median_income' dataframe. We do this as it allows us to contain all relevant information into a single dataframe, making it easier to work with.
-</code></pre>
+<p>The last thing we want to do merge all of our new dataframes with the 'df_median_income' dataframe. We do this as it allows us to contain all relevant information into a single dataframe, making it easier to work with.</p>
 
 </div>
 </div>
@@ -16017,11 +15999,8 @@ the 'df_college_cost' dataframe is actually a three dataset put together (All In
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h2 id="4.-Exploratory-Data-Analysis">4. Exploratory Data Analysis<a class="anchor-link" href="#4.-Exploratory-Data-Analysis">&#182;</a></h2><pre><code>Now that we have all of our data ready we can begin analyzing it. For this section it's best to start off simple and get to the finer details later. Our main objective is to find relationships between median salary and the cost for college so lets start off by plotting just those columns in a line graph.
-
-&lt;-- Resources --&gt;
-https://matplotlib.org/stable/gallery/index.html
-</code></pre>
+<h2 id="4.-Exploratory-Data-Analysis">4. Exploratory Data Analysis<a class="anchor-link" href="#4.-Exploratory-Data-Analysis">&#182;</a></h2><p>Now that we have all of our data ready we can begin analyzing it. For this section it's best to start off simple and get to the finer details later. Our main objective is to find relationships between median salary and the cost for college so lets start off by plotting just those columns in a line graph.</p>
+<p><a href="https://matplotlib.org/stable/gallery/index.html">Examples of different types of plots</a></p>
 
 </div>
 </div>
@@ -16105,10 +16084,8 @@ class="
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<pre><code>From this plot we can already start making observations. Median Salary and Total Cost have both increased throughout the years with private institutions increasing more rapidly than public institutions, but how much of the Median Salary is taken up by the Total Cost? We'll we can plot that too!
-
-If we take the Total Cost per year and divide it by the Median Salary estimates per year then we'll be able to see the ratio of how much a Median Salary is consumed by the Total Cost of college.
-</code></pre>
+<p>From this plot we can already start making observations. Median Salary and Total Cost have both increased throughout the years with private institutions increasing more rapidly than public institutions, but how much of the Median Salary is taken up by the Total Cost? We'll we can plot that too!</p>
+<p>If we take the Total Cost per year and divide it by the Median Salary estimates per year then we'll be able to see the ratio of how much a Median Salary is consumed by the Total Cost of college.</p>
 
 </div>
 </div>
@@ -16183,10 +16160,8 @@ class="
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<pre><code>We can now observe that the amount of a Median Salary that would be consumed by the Total Cost for college has increased throughout the years, but let's break this down further.
-
-The Total Cost column represents the sum totals of Tuition and Fees, Dormitory costs, and Board costs, all of which we have columns for, so let's plot out how much each of those individual columns represent the Total Cost. This time instead of a line plot let's use a stackplot as it shows the breakdown of costs and also shows the total cost without us needing to plot it.
-</code></pre>
+<p>We can now observe that the amount of a Median Salary that would be consumed by the Total Cost for college has increased throughout the years, but let's break this down further.</p>
+<p>The Total Cost column represents the sum totals of Tuition and Fees, Dormitory costs, and Board costs, all of which we have columns for, so let's plot out how much each of those individual columns represent the Total Cost. This time instead of a line plot let's use a stackplot as it shows the breakdown of costs and also shows the total cost without us needing to plot it.</p>
 
 </div>
 </div>
@@ -16268,8 +16243,7 @@ class="
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<pre><code>We can see here that, in all cases, Total Cost has increased with Tuition and Fees taking up the largest share of responsibility, then followed by Dormitory costs and Board costs in that order. It's hard to quantify how these ratios compare with each other in relation to the Median Salary though, so let's go back to plotting these in a line graph.
-</code></pre>
+<p>We can see here that, in all cases, Total Cost has increased with Tuition and Fees taking up the largest share of responsibility, then followed by Dormitory costs and Board costs in that order. It's hard to quantify how these ratios compare with each other in relation to the Median Salary though, so let's go back to plotting these in a line graph.</p>
 
 </div>
 </div>
@@ -16375,8 +16349,7 @@ class="
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<pre><code>Finally from these plots we can see how much of the median salary is taken up by each cost (Tuition and Fees, Dormitory, and Board). We can observe that the cost ratio has increased for each type of cost although if we wanted to predict how this might look in future years we couldn't. This is where models and hypothesis testing comes in.
-</code></pre>
+<p>Finally from these plots we can see how much of the median salary is taken up by each cost (Tuition and Fees, Dormitory, and Board). We can observe that the cost ratio has increased for each type of cost although if we wanted to predict how this might look in future years we couldn't. This is where models and hypothesis testing comes in.</p>
 
 </div>
 </div>
@@ -16388,11 +16361,14 @@ class="
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h2 id="5.-Hypothesis-Testing">5. Hypothesis Testing<a class="anchor-link" href="#5.-Hypothesis-Testing">&#182;</a></h2><p>To predict future values for a column we need to fo two things:
-    1) Construct a regression model
-    2) Test the model</p>
-<p>A regression model describes, in a general sense, the expected value for a variable at any given point. There are many different types of regression, but here we'll only be using linear regression models</p>
-<p>&lt;-- Resources --&gt;
+<h2 id="5.-Hypothesis-Testing">5. Hypothesis Testing<a class="anchor-link" href="#5.-Hypothesis-Testing">&#182;</a></h2><p>To predict future values for a column we need to fo two things:</p>
+<ol>
+<li>Construct a regression model</li>
+<li>Test the model</li>
+</ol>
+<p>A regression model describes, in a general sense, the expected value for a variable at any given point. There are many different types of regression, but here we'll only be using linear regression models.</p>
+<p>Constructing a model doesn't inherently mean that the model will be accurate, this is where hypothesis testing comes in. Without going too deep into specifics, assign a level of significance to a variable called alpha (<strong>α</strong>). An alpha of 0.05 means that we can say with 95% certainty that our model is accurate, <strong>α</strong> = 0.10 would indicate a 90% level of confidence, and so on. We compare <strong>α</strong> to whats known as the P-value. If the P-value is less than <strong>α</strong> then</p>
+<p>Resources
 https://en.wikipedia.org/wiki/Regression</p>
 
 </div>
