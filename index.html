@@ -14624,7 +14624,7 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <h2 id="1.-Introduction">1. Introduction<a class="anchor-link" href="#1.-Introduction">&#182;</a></h2><p>Welcome!</p>
-<p>Data science is an ever growing (and well paid) field which allows you to get to the bottom of what's happening in the world. In this tutorial we are going to be demonstrating the 'Data Science Pipeline,' a general guide into everything you'll need to know to do data science by yourself. No College Tuition required!</p>
+<p>Data science is an ever growing (and well paid) field which allows you to get to the bottom of what's happening in the world. In this tutorial we are going to be demonstrating the 'Data Science Pipeline,' a general guide into everything you'll need to know to do data science by yourself. No College tuition required!</p>
 <p>A topic that has been on debate for a while now has been the cost of of college. Students and parents alike claim that the cost of Colleges/Universities are too damn high, higher than they've ever been. The general conversation tends to go like this:</p>
 <p><strong>Students:</strong> &quot;You're charging us too much, we can't afford it.&quot;</p>
 <p><strong>Colleges/Universities:</strong> &quot;but what if we charged you even more?! :D&quot;</p>
@@ -14684,11 +14684,11 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 <p>If you open up these files you'll notice that they aren't just datasets. They both have headers and footnotes which we don't want. To adjust for this we parse the data. Parsing is the act of fitting files into our use case. In order to parse our excel files into dataframes we will be using the pandas 'read_excel()' function to extract the data and ignore the header and footnotes.</p>
 <p>Free resources for finding Datasets:</p>
 <ul>
-<li>https://www.kaggle.com/</li>
-<li>https://datasetsearch.research.google.com/</li>
-<li>https://en.wikipedia.org/wiki/List_of_open_government_data_sites</li>
+<li><a href="https://www.kaggle.com/">kaggle.com</a></li>
+<li><a href="https://datasetsearch.research.google.com/">datasetsearch.research.google.com</a></li>
+<li><a href="https://en.wikipedia.org/wiki/List_of_open_government_data_sites">wikipedia.org/wiki/List_of_open_government_data_sites</a></li>
+<li>You can also often find datasets directly on the sites of organizations.</li>
 </ul>
-<p>You can also often find datasets directly on the sites of organizations.</p>
 
 </div>
 </div>
@@ -15660,7 +15660,7 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <p>Now that we've fixed all the issues with 'df_median_income' we can start fixing the issues with 'df_college_cost'.</p>
-<p>the 'df_college_cost' dataframe is actually a three dataset put together (All Institutions, Public Institutions, and Private Institutions). We'll start by finding and deleting the labels for these datasets, this will allow us to fix the issues with the data, then we can split each dataset into it's own dataframe.</p>
+<p>The 'df_college_cost' dataframe is actually a three dataset put together (All Institutions, Public Institutions, and Private Institutions). We'll start by finding and deleting the labels for these datasets, this will allow us to fix the issues with the data, then we can split each dataset into it's own dataframe.</p>
 
 </div>
 </div>
@@ -16019,8 +16019,7 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h2 id="4.-Exploratory-Data-Analysis">4. Exploratory Data Analysis<a class="anchor-link" href="#4.-Exploratory-Data-Analysis">&#182;</a></h2><p>Now that we have all of our data ready we can begin analyzing it. For this section it's best to start off simple and get to the finer details later. Our main objective is to find relationships between median salary and the cost for college so lets start off by plotting just those columns in a line graph.</p>
-<p><a href="https://matplotlib.org/stable/gallery/index.html">Examples of different types of plots</a></p>
+<h2 id="4.-Exploratory-Data-Analysis">4. Exploratory Data Analysis<a class="anchor-link" href="#4.-Exploratory-Data-Analysis">&#182;</a></h2><p>Now that we have all of our data ready we can begin analyzing it. For this section it's best to start off simple and get to the finer details later. Our main objective is to find relationships between median salary and the total cost for college so lets start off by plotting just those columns in a line graph.</p>
 
 </div>
 </div>
@@ -16105,7 +16104,7 @@ class="
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <p>From this plot we can already start making observations. Median Salary and Total Cost have both increased throughout the years with private institutions increasing more rapidly than public institutions, but how much of the Median Salary is taken up by the Total Cost? We'll we can plot that too!</p>
-<p>If we take the Total Cost per year and divide it by the Median Salary estimates per year then we'll be able to see the ratio of how much a Median Salary is consumed by the Total Cost of college.</p>
+<p>If we take the Total Cost per year and divide it by the Median Salary estimates per year then we'll get the ratio of how much a Median Salary is consumed by the Total Cost of college.</p>
 
 </div>
 </div>
@@ -16401,7 +16400,7 @@ class="
 <div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Creating total cost to median salary ratio columns for each type of institution</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Creating total cost to median salary ratio columns for each type of institution's dataframe</span>
 <span class="k">for</span> <span class="n">df</span> <span class="ow">in</span> <span class="n">df_college_cost</span><span class="p">:</span>
     <span class="n">df</span><span class="p">[</span><span class="s1">'Ratio'</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">'Total'</span><span class="p">]</span> <span class="o">/</span> <span class="n">df</span><span class="p">[</span><span class="s1">'Estimate'</span><span class="p">]</span>
 
@@ -16444,7 +16443,7 @@ Dep. Variable:                  Ratio   R-squared:                       0.908
 Model:                            OLS   Adj. R-squared:                  0.906
 Method:                 Least Squares   F-statistic:                     503.5
 Date:                Fri, 16 Dec 2022   Prob (F-statistic):           4.36e-28
-Time:                        14:14:12   Log-Likelihood:                 122.77
+Time:                        18:41:10   Log-Likelihood:                 122.77
 No. Observations:                  53   AIC:                            -241.5
 Df Residuals:                      51   BIC:                            -237.6
 Df Model:                           1                                         
@@ -16499,7 +16498,7 @@ strong multicollinearity or other numerical problems.
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Modeling linear regression</span>
 <span class="n">model_public_institutions</span> <span class="o">=</span> <span class="n">smf</span><span class="o">.</span><span class="n">ols</span><span class="p">(</span><span class="n">formula</span><span class="o">=</span><span class="s1">'Ratio ~ Year'</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">df_college_cost_public</span><span class="p">)</span><span class="o">.</span><span class="n">fit</span><span class="p">()</span>
 
-<span class="c1"># Displaying 'All Institutions' model results</span>
+<span class="c1"># Displaying 'Public Institutions' model results</span>
 <span class="nb">print</span><span class="p">(</span><span class="s1">'</span><span class="se">\n</span><span class="s1">------------------------------------------------</span><span class="se">\</span>
 <span class="s1">    </span><span class="se">\n</span><span class="s1">Public Institutions Hypothesis Testing</span><span class="se">\n\</span>
 <span class="s1">------------------------------------------------</span><span class="se">\n</span><span class="s1">'</span><span class="p">)</span>
@@ -16535,7 +16534,7 @@ Dep. Variable:                  Ratio   R-squared:                       0.861
 Model:                            OLS   Adj. R-squared:                  0.859
 Method:                 Least Squares   F-statistic:                     317.1
 Date:                Fri, 16 Dec 2022   Prob (F-statistic):           1.55e-23
-Time:                        14:14:12   Log-Likelihood:                 129.41
+Time:                        18:41:10   Log-Likelihood:                 129.41
 No. Observations:                  53   AIC:                            -254.8
 Df Residuals:                      51   BIC:                            -250.9
 Df Model:                           1                                         
@@ -16572,7 +16571,7 @@ strong multicollinearity or other numerical problems.
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <p>Let's continue using <strong>α</strong> = 0.01.</p>
-<p>As we can see by the 'P&gt;|t|' column the P-value is 0.000 again and, since 0,00 &lt; 0.01, we can say with 99% confidence out model is accurate. The equation for our model will be y = 0.0034 * x + -6.6480</p>
+<p>As we can see by the 'P&gt;|t|' column the P-value is 0.000 again and, since 0.000 &lt; 0.01, we can say with a 99% level of confidence our model is accurate. The equation for our model will be y = 0.0034 * x + -6.6480</p>
 <p>Finally let's check try a linear regression model for only private institutions.</p>
 
 </div>
@@ -16589,7 +16588,7 @@ strong multicollinearity or other numerical problems.
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Modeling linear regression</span>
 <span class="n">model_private_institutions</span> <span class="o">=</span> <span class="n">smf</span><span class="o">.</span><span class="n">ols</span><span class="p">(</span><span class="n">formula</span><span class="o">=</span><span class="s1">'Ratio ~ Year'</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">df_college_cost_private</span><span class="p">)</span><span class="o">.</span><span class="n">fit</span><span class="p">()</span>
 
-<span class="c1"># Displaying 'All Institutions' model results</span>
+<span class="c1"># Displaying 'Private Institutions' model results</span>
 <span class="nb">print</span><span class="p">(</span><span class="s1">'</span><span class="se">\n</span><span class="s1">------------------------------------------------</span><span class="se">\</span>
 <span class="s1">    </span><span class="se">\n</span><span class="s1">Private Institutions Hypothesis Testing</span><span class="se">\n\</span>
 <span class="s1">------------------------------------------------</span><span class="se">\n</span><span class="s1">'</span><span class="p">)</span>
@@ -16625,7 +16624,7 @@ Dep. Variable:                  Ratio   R-squared:                       0.966
 Model:                            OLS   Adj. R-squared:                  0.965
 Method:                 Least Squares   F-statistic:                     1444.
 Date:                Fri, 16 Dec 2022   Prob (F-statistic):           4.39e-39
-Time:                        14:14:12   Log-Likelihood:                 118.16
+Time:                        18:41:10   Log-Likelihood:                 118.16
 No. Observations:                  53   AIC:                            -232.3
 Df Residuals:                      51   BIC:                            -228.4
 Df Model:                           1                                         
@@ -16662,7 +16661,7 @@ strong multicollinearity or other numerical problems.
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <p><strong>α</strong> = 0.01, and again we have a P-value of 0.000, so we this model also has a 99% confidence level. The equation for this regression model is y = 0.0091 * x + -17.5775</p>
-<p>Now that we have high confidence regression models we can plot this to see the predicted ratios for each institution type. The farther in the future you look the more inaccurate your model is likely to be so we'll only look at years up to 2030.</p>
+<p>Now that we have high confidence regression models, we can plot this to see the predicted ratios for each institution type. The farther in the future you look the more inaccurate your model is likely to be so we'll only look at years up to 2030.</p>
 
 </div>
 </div>
@@ -16794,7 +16793,7 @@ Dep. Variable:                  Ratio   R-squared:                       0.966
 Model:                            OLS   Adj. R-squared:                  0.965
 Method:                 Least Squares   F-statistic:                     1444.
 Date:                Fri, 16 Dec 2022   Prob (F-statistic):           4.39e-39
-Time:                        14:14:13   Log-Likelihood:                 118.16
+Time:                        18:41:11   Log-Likelihood:                 118.16
 No. Observations:                  53   AIC:                            -232.3
 Df Residuals:                      51   BIC:                            -228.4
 Df Model:                           1                                         
@@ -16830,7 +16829,7 @@ strong multicollinearity or other numerical problems.
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>Here we have a P-value of 0.000, just as when we included all data, but our 'coef' column is now different. Let's plot this out to compare to the last regression line.</p>
+<p>Here we have a P-value of 0.000 meaning we have a confidence level of 99%, just as when we included all data, but our 'coef' column is now different. Let's plot this out and compare with the previous regression line.</p>
 
 </div>
 </div>
@@ -16843,7 +16842,7 @@ strong multicollinearity or other numerical problems.
 <div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># PLotting total cost of all institutions to median salary ratio</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># PLotting total cost of 'all institutions' to median salary ratio</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span>
     <span class="n">df_college_cost_all</span><span class="p">[</span><span class="s1">'Year'</span><span class="p">],</span>
     <span class="n">df_college_cost_all</span><span class="p">[</span><span class="s1">'Total'</span><span class="p">]</span> <span class="o">/</span> <span class="n">df_college_cost_all</span><span class="p">[</span><span class="s1">'Estimate'</span><span class="p">],</span>
@@ -16952,10 +16951,22 @@ class="
 <li>All types of cost (Tuition and Fees, Dormitory, Board) in colleges are increasing.</li>
 <li>Tuitions and Fees make up the bulk of Total Cost.</li>
 <li>Tuitions and Fees cost is increasing the fastest of the types of cost.</li>
+<li>The Total Cost of college to Median Salary ratio is likely to continue to grow</li>
 </ol>
 <p>This list is non-exhaustive. There were more insights that were had, and more insights that could be made with both the data we did use and the data that we did not use, but I'd also like to highlight the insights that we didn't make.</p>
-<p>In this example we showed that the total cost of college is taking up more and more of the median salary as years go by. We *<strong>did not</strong>* show that this is because colleges are charging more than they should for the times. Another explanation could be that colleges aren't charging too much, but instead people are getting paid too little. It could be both of these reasons, and it could even be neither (although that feels unlikely). Data science is a very useful tool in figure out what is happening in the world and by how much, but don't confuse it as an answer to 'why?'.</p>
+<p>In this example we showed that the total cost of college is taking up more and more of the median salary as years go by. We *<strong>did not</strong>* show that this is because colleges are charging more than they should for the times. Another explanation could be that colleges aren't charging too much, but instead people are getting paid too little. It could be both of these reasons, and it could even be neither (although that feels unlikely). Data science is a very useful tool for figuring out what is happening in the world and by how much, but don't confuse it as an answer to 'why?'</p>
 <p>Nevertheless, from this tutorial we were able to go over the entirety of the 'Data Science Pipeline.' Data science is one of the most useful sciences to know and, when you apply it to things you care about, can even be really fun. That said, you are now prepared to move on to step 7:</p>
+
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <h2 id="7.-Do-it-Yourself">7. Do it Yourself<a class="anchor-link" href="#7.-Do-it-Yourself">&#182;</a></h2><p>Free resources for finding Datasets:</p>
 <ul>
 <li><a href="https://www.kaggle.com/">kaggle.com</a></li>
